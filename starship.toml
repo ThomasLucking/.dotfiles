@@ -1,6 +1,6 @@
 add_newline = false
 
-format = "$directory$git_branch$git_status$character"
+format = "$directory$git_branch$character"
 
 [directory]
 style = "bold blue"
@@ -9,15 +9,11 @@ truncate_to_repo = false
 
 [git_branch]
 symbol = ""
-format = "git:([$branch](bold #ff9966))"
-# Alternative colors to try:
-# #ff9966 (salmon/orange as shown)
-# #ff8c66 (slightly more orange)
-# #ffaa88 (lighter salmon)
+format = " git([$branch](#ff9966))"
 
 [git_status]
-format = ""  # Hide git status symbols
+format = ""
 
 [character]
-success_symbol = ""
-error_symbol = ""
+success_symbol = " "
+error_symbol = " "
