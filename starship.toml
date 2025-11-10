@@ -8,7 +8,7 @@ truncation_length = 3
 truncate_to_repo = false
 
 [git_branch]
-symbol = ""
+symbol = "∑"
 format = "[git](bold yellow)\\([$branch](#ff9966)\\)"
 
 [git_status]
