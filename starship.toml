@@ -9,7 +9,7 @@ truncate_to_repo = false
 
 [git_branch]
 symbol = ""
-format = " git([$branch](#ff9966))"
+format = "[git](bold yellow)\\([$branch](#ff9966)\\)"
 
 [git_status]
 format = ""
