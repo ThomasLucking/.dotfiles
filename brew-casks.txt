@@ -1,0 +1,8 @@
+basictex
+docker-desktop
+font-jetbrains-mono-nerd-font
+font-meslo-lg-nerd-font
+ghostty
+kitty
+orbstack
+powershell

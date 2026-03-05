@@ -1,0 +1,9 @@
+theme = "adwaita-dark"
+
+[editor]
+clipboard-provider = "pasteboard"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "bar"
+select = "underline"

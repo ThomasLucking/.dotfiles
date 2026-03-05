@@ -1,0 +1,52 @@
+{
+  "base_keymap": "VSCode",
+  "minimap": {
+    "show": "never",
+  },
+  "buffer_font_size": 16.0,
+  "buffer_font_fallbacks": ["Menlo", "Monaco", "Courier New", "monospace"],
+  "colorize_brackets": true,
+  "icon_theme": "Catppuccin Latte",
+  "theme": "Catppuccin Mocha - No Italics",
+  "ui_font_size": 16,
+  "buffer_font_family": "JetBrains Mono",
+  "cursor_shape": "bar",
+  "buffer_font_weight": 600,
+  "buffer_font_features": {
+    "calt": false,
+  },
+  "cursor_blink": true,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 100,
+    },
+  },
+  "terminal": {
+    "cursor_shape": "underline",
+  },
+  "tab_bar": {
+    "show": true,
+  },
+  "outline_panel": {
+    "button": false,
+  },
+  "languages": {
+    "PHP": {
+      "colorize_brackets": true,
+      "language_servers": ["intelephense", "copilot"],
+    },
+    "Markdown": {
+      "colorize_brackets": true,
+      "copilot": true,
+    },
+  },
+  "features": {
+    "copilot": true,
+    "bracket_pair_colorization": true,
+  },
+  "ui": {
+    "activity_bar": {
+      "location": "top",
+    },
+  },
+}
