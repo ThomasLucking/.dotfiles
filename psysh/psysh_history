@@ -1,0 +1,66 @@
+\DB::select('SELECT * FROM chirps');
+php artisan tinker
+// We're entering into the chirps table for selecting the chirps table
+// and then inserting a message
+\DB::table('chirps')->insert([
+    'user_id' => null,  // Because we don't have a user, we can just leave it off
+    'message' => 'My first chirp in the database!',
+    'created_at' => now(),  // Laravel doesn't give these by default when using DB
+    'updated_at' => now()
+]);
+// And we get this true back. So that means that this was successful,
+// this chirp was now entered into the database!
+// Check it worked (all chirps)
+\DB::table('chirps')->get();
+exit
+// Create a new user
+$user = \App\Models\User::create([
+    'name' => 'Eloquent Expert',
+    'email' => 'eloquent@expert.com',
+    'password' => bcrypt('password')
+]);
+// Create a chirp for this user
+$chirp = $user->chirps()->create([
+    'message' => 'Eloquent makes database work a breeze!'
+]);
+// Access the relationship
+echo $chirp->user->name; // "Eloquent Expert"
+// Get all chirps
+\App\Models\Chirp::all();
+// Get recent chirps
+\App\Models\Chirp::latest()->get();
+exit
+$user = \App\Models\User::create([
+    'name' => 'Eloquent Expert',
+    'email' => 'eloquent@expert.com',
+    'password' => bcrypt('password')
+]);
+$chirp = $user->chirps()->create([
+    'message' => 'Eloquent makes database work a breeze!'
+]);
+php artisan migrate:fresh
+// Instead of User::create([...])
+User::updateOrCreate(
+    ['email' => 'eloquent@expert.com'], // The unique identifier to look for
+    ['name' => 'Eloquent Expert', 'password' => $password] // The data to update/insert
+);
+php artisan tinker
+>>> User::where('email', 'eloquent@expert.com')->delete();
+>>> User::where('email', 'eloquent@expert.com')->delete();
+User::where('email', 'eloquent@expert.com')->delete();
+php artisan tinker
+clear
+// Instead of User::create([...])
+User::updateOrCreate(
+    ['email' => 'eloquent@expert.com'], // The unique identifier to look for
+    ['name' => 'Eloquent Expert', 'password' => $password] // The data to update/insert
+);
+$user = \App\Models\User::create([
+    'name' => 'Eloquent Expert',
+    'email' => 'eloquent@expert.com',
+    'password' => bcrypt('password')
+]);
+echo $chirp->user->name;
+\App\Models\Chirp::all();
+\App\Models\Chirp::latest()->get();
+exit

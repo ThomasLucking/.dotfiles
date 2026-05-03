@@ -1,0 +1,10 @@
+theme = "rose_pine_moon"
+
+[editor]
+clipboard-provider = "pasteboard"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "bar"
+select = "underline"
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+# Copy selected files to macOS clipboard (pasteable in Finder)
+if [ -s "$NNN_SEL" ]; then
+    files=$(cat "$NNN_SEL" | while read -r f; do echo "POSIX file \"$f\""; done | paste -sd ',' -)
+    osascript -e "set the clipboard to {$files}"
+    echo "Copied to clipboard!"
+else
+    osascript -e "set the clipboard to (POSIX file \"$1\")"
+    echo "Copied $1 to clipboard!"
+fi
