@@ -11,3 +11,13 @@ cagent/
 tanstack/
 varlock/
 opencode/package-lock.json
+
+# claude code: track config only, ignore runtime state
+claude/*
+!claude/CLAUDE.md
+!claude/settings.json
+!claude/statusline.sh
+!claude/statusline-command.sh
+!claude/hooks/
+!claude/skills/
+claude/skills/synced/
