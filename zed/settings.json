@@ -1,4 +1,23 @@
 {
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    }
+  },
+  "disable_ai": true,
+  "cli_default_open_behavior": "existing_window",
   "project_panel": {
     "dock": "left"
   },

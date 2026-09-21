@@ -1,0 +1,13 @@
+.DS_Store
+raycast/extensions/
+wireshark/recent*
+zed/prompts/**/lock.mdb
+intelephense/
+herdr/*.log
+herdr/session.json
+herdr/release-notes.json
+*.bak
+cagent/
+tanstack/
+varlock/
+opencode/package-lock.json
