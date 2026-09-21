@@ -1,0 +1,1 @@
+/Users/thomaslucking/dev/agent-state/CLAUDE.md
