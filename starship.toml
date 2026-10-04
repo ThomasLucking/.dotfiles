@@ -57,6 +57,7 @@ format = "[via](overlay1) [$symbol$version](bold mauve) "
 symbol = " "
 
 [nodejs]
+disabled = true
 format = "[via](overlay1) [$symbol$version](bold green) "
 symbol = " "
 
