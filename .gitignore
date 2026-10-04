@@ -21,3 +21,6 @@ claude/*
 !claude/hooks/
 !claude/skills/
 claude/skills/synced/
+
+# credentials
+context7/

@@ -3,7 +3,6 @@
     "commit": "",
     "pr": ""
   },
-  "model": "opus",
   "hooks": {
     "SessionStart": [
       {
@@ -29,6 +28,12 @@
         "source": "github",
         "repo": "ayghri/i-have-adhd"
       }
+    },
+    "vibe-wise": {
+      "source": {
+        "source": "github",
+        "repo": "nykooi1/vibe-wise"
+      }
     }
   },
   "effortLevel": "medium",
@@ -38,9 +43,16 @@
     },
     "claude-opus-5": {
       "effortLevel": "high"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
     }
   },
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "agentPushNotifEnabled": true
+  "theme": "custom:catpuccino",
+  "agentPushNotifEnabled": true,
+  "enabledPlugins": {
+    "vibe-wise@vibe-wise": true
+  }
 }
