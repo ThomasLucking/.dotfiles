@@ -1,0 +1,111 @@
+# AeroSpace config — translated from Hyprland (Lua) config
+# Location: ~/.aerospace.toml  (or ~/.config/aerospace/aerospace.toml)
+# Docs: https://nikitabobko.github.io/AeroSpace/guide
+#
+# mainMod: SUPER -> ctrl-alt
+#   cmd clashes with every macOS shortcut, and plain alt (Option) is what you
+#   need on a Swiss French Mac layout to type @ # | [ ] { } etc.
+#   If you'd rather use something else, find/replace "ctrl-alt-".
+
+start-at-login = true
+
+# --------------------
+# AUTOSTART
+# --------------------
+# waybar     -> SketchyBar (optional) or just the macOS menu bar
+# nm-applet  -> not needed (macOS Wi-Fi menu)
+# hyprpaper  -> System Settings > Wallpaper
+after-startup-command = []
+
+# --------------------
+# LAYOUT (≈ dwindle)
+# --------------------
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+accordion-padding = 30
+
+# Mouse jumps to the newly focused monitor
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# Physical key positions — fine for Swiss QWERTZ since no binding uses Y/Z
+[key-mapping]
+preset = 'qwerty'
+
+# gaps_in = 0, gaps_out = 0
+[gaps]
+inner.horizontal = 0
+inner.vertical   = 0
+outer.left       = 0
+outer.bottom     = 0
+outer.top        = 0
+outer.right      = 0
+
+# --------------------
+# KEYBINDINGS
+# --------------------
+[mode.main.binding]
+
+# Applications
+ctrl-alt-enter = 'exec-and-forget open -na kitty'
+ctrl-alt-q     = 'close'
+ctrl-alt-m     = "exec-and-forget osascript -e 'tell application \"System Events\" to log out'"
+ctrl-alt-e     = 'exec-and-forget open ~'                         # Finder instead of Dolphin
+ctrl-alt-v     = 'layout floating tiling'                         # toggle float
+ctrl-alt-d     = 'exec-and-forget open -a Spotify'
+ctrl-alt-l     = 'exec-and-forget pmset displaysleepnow'          # locks if "require password immediately" is on
+ctrl-alt-s     = 'exec-and-forget screencapture -i ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png'
+ctrl-alt-f     = 'fullscreen'
+# ctrl-alt-p   (pseudo-tile) -> no AeroSpace equivalent
+# ALT+SPACE launcher -> set the hotkey in Raycast/Spotlight itself, not here
+
+# Focus
+ctrl-alt-left  = 'focus left'
+ctrl-alt-right = 'focus right'
+ctrl-alt-up    = 'focus up'
+ctrl-alt-down  = 'focus down'
+
+# Move windows
+cmd-alt-left       = 'move left'
+cmd-alt-right      = 'move right'
+cmd-alt-up         = 'move up'
+cmd-alt-down       = 'move down'
+
+# Switch workspaces
+cmd-1 = 'workspace 1'
+cmd-2 = 'workspace 2'
+cmd-3 = 'workspace 3'
+cmd-4 = 'workspace 4'
+cmd-5 = 'workspace 5'
+cmd-6 = 'workspace 6'
+cmd-7 = 'workspace 7'
+cmd-8 = 'workspace 8'
+cmd-9 = 'workspace 9'
+cmd-0 = 'workspace 10'
+
+# Move window to workspace
+cmd-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
+cmd-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
+cmd-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
+cmd-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
+cmd-shift-5 = 'move-node-to-workspace --focus-follows-window 5'
+cmd-shift-6 = 'move-node-to-workspace --focus-follows-window 6'
+cmd-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
+cmd-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
+cmd-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
+cmd-shift-0 = 'move-node-to-workspace --focus-follows-window 10'
+
+# "Scratchpad" — AeroSpace has no special workspaces, so it's a named one
+ctrl-alt-shift-s = 'move-node-to-workspace S'
+
+# Replaces SUPER + right-drag resize (AeroSpace has no mouse resize binding)
+ctrl-alt-r = 'mode resize'
+
+[mode.resize.binding]
+left  = 'resize width -50'
+right = 'resize width +50'
+up    = 'resize height -50'
+down  = 'resize height +50'
+enter = 'mode main'
+esc   = 'mode main'
