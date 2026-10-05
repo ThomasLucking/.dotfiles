@@ -3,14 +3,11 @@
 // Extensions to install first (cmd-shift-x): catppuccin, catppuccin-icons, php, vue, emmet
 {
   // workbench.colorTheme / workbench.iconTheme
-  "edit_predictions": {
-    "provider": "copilot",
-  },
   "theme": "Catppuccin Mocha",
   "icon_theme": "Catppuccin Mocha",
 
   // editor.fontFamily / fontSize / fontWeight / fontLigatures
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "JetBrains Mono",
   "buffer_font_fallbacks": ["Menlo", "Monaco", "Courier New"],
   // VS Code: 13px * zoomLevel 1 (= 120%) ≈ 15.6px effective. Zed has no window zoom,
   // so bump the font sizes instead. Use 13 if you want the literal value.
@@ -54,6 +51,9 @@
   "formatter": "auto",
 
   // github.copilot.enable: off everywhere except plaintext
+  "features": {
+    "edit_prediction_provider": "copilot",
+  },
   "show_edit_predictions": false,
 
   "languages": {

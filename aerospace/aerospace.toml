@@ -56,7 +56,7 @@ ctrl-alt-v     = 'layout floating tiling'                         # toggle float
 ctrl-alt-d     = 'exec-and-forget open -a Spotify'
 ctrl-alt-l     = 'exec-and-forget pmset displaysleepnow'          # locks if "require password immediately" is on
 ctrl-alt-s     = 'exec-and-forget screencapture -i ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png'
-ctrl-alt-f     = 'fullscreen'
+ctrl-f         = 'fullscreen'
 # ctrl-alt-p   (pseudo-tile) -> no AeroSpace equivalent
 # ALT+SPACE launcher -> set the hotkey in Raycast/Spotlight itself, not here
 
