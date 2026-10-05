@@ -22,6 +22,11 @@
     "command": "bash ~/.claude/statusline-command.sh",
     "padding": 0
   },
+  "enabledPlugins": {
+    "vibe-wise@vibe-wise": true,
+    "ponytail@ponytail": true,
+    "i-have-adhd@i-have-adhd": true
+  },
   "extraKnownMarketplaces": {
     "i-have-adhd": {
       "source": {
@@ -33,6 +38,12 @@
       "source": {
         "source": "github",
         "repo": "nykooi1/vibe-wise"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
       }
     }
   },
@@ -51,8 +62,5 @@
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "theme": "custom:catpuccino",
-  "agentPushNotifEnabled": true,
-  "enabledPlugins": {
-    "vibe-wise@vibe-wise": true
-  }
+  "agentPushNotifEnabled": true
 }
