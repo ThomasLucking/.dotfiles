@@ -78,6 +78,12 @@ cmd-alt-right      = 'move right'
 cmd-alt-up         = 'move up'
 cmd-alt-down       = 'move down'
 
+# Join window with neighbour into a nested container (≈ dwindle split)
+ctrl-alt-shift-left  = 'join-with left'
+ctrl-alt-shift-right = 'join-with right'
+ctrl-alt-shift-up    = 'join-with up'
+ctrl-alt-shift-down  = 'join-with down'
+
 # Switch workspaces
 cmd-1 = 'workspace 1'
 cmd-2 = 'workspace 2'
