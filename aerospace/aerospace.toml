@@ -37,6 +37,10 @@ on-window-detected = [{ if = 'true', run = 'exec-and-forget ~/.config/aerospace/
 # Mouse jumps to the newly focused monitor
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+# Workspace 2 always lives on the external monitor (matched by name, not index)
+[workspace-to-monitor-force-assignment]
+2 = 'PHL 279C9'
+
 # Physical key positions — fine for Swiss QWERTZ since no binding uses Y/Z
 [key-mapping]
 preset = 'qwerty'
