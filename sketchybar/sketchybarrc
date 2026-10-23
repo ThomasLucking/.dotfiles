@@ -1,0 +1,54 @@
+#!/bin/bash
+
+CONFIG_DIR="$HOME/.config/sketchybar"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+source "$CONFIG_DIR/colors.sh"
+FONT="JetBrainsMono Nerd Font Mono"
+
+sketchybar --bar position=top height=32 color=$MANTLE shadow=off padding_left=8 padding_right=8 sticky=on
+
+sketchybar --default \
+  icon.font="$FONT:Bold:16.0" icon.color=$TEXT \
+  label.font="$FONT:Bold:14.0" label.color=$TEXT \
+  background.color=$SURFACE0 background.corner_radius=8 background.height=24 \
+  padding_left=3 padding_right=3 \
+  icon.padding_left=8 icon.padding_right=4 label.padding_left=4 label.padding_right=8
+
+# ---- Left: AeroSpace workspaces ----
+sketchybar --add event aerospace_workspace_change
+for sid in $(aerospace list-workspaces --all); do
+  sketchybar --add item space.$sid left \
+    --subscribe space.$sid aerospace_workspace_change \
+    --set space.$sid icon="$sid" label.drawing=off icon.padding_right=8 \
+      click_script="aerospace workspace $sid" \
+      script="$PLUGIN_DIR/aerospace.sh $sid"
+done
+
+# ---- Right (first added = rightmost) ----
+sketchybar --add item clock e \
+  --set clock icon=󰥔 icon.color=$MAUVE update_freq=30 script="$PLUGIN_DIR/clock.sh" \
+  --subscribe clock system_woke
+
+sketchybar --add item battery right \
+  --set battery update_freq=60 script="$PLUGIN_DIR/battery.sh" \
+  --subscribe battery power_source_change system_woke
+
+sketchybar --add item volume right \
+  --set volume icon.color=$YELLOW script="$PLUGIN_DIR/volume.sh" \
+  --subscribe volume volume_change
+
+sketchybar --add item wifi right \
+  --set wifi label.drawing=off icon.padding_right=8 icon.color=$BLUE script="$PLUGIN_DIR/wifi.sh" \
+  --subscribe wifi wifi_change system_woke
+
+sketchybar --add event input_change AppleSelectedInputSourcesChangedNotification \
+  --add item keyboard right \
+  --set keyboard icon=󰌌 icon.color=$MAUVE script="$PLUGIN_DIR/keyboard.sh" \
+  --subscribe keyboard input_change
+
+# stats.sh updates ram/gpu/cpu together, driven by the cpu item
+sketchybar --add item ram right --set ram icon=󰍛 icon.color=$PEACH \
+  --add item gpu right --set gpu icon=󰢮 icon.color=$TEAL \
+  --add item cpu right --set cpu icon=󰻠 icon.color=$GREEN update_freq=3 script="$PLUGIN_DIR/stats.sh"
+
+sketchybar --update
