@@ -29,26 +29,25 @@ sketchybar --add item clock e \
   --set clock icon=󰥔 icon.color=$MAUVE update_freq=30 script="$PLUGIN_DIR/clock.sh" \
   --subscribe clock system_woke
 
-sketchybar --add item battery right \
+sketchybar --add item battery e \
   --set battery update_freq=60 script="$PLUGIN_DIR/battery.sh" \
   --subscribe battery power_source_change system_woke
 
-sketchybar --add item volume right \
+sketchybar --add item volume e \
   --set volume icon.color=$YELLOW script="$PLUGIN_DIR/volume.sh" \
   --subscribe volume volume_change
 
-sketchybar --add item wifi right \
+sketchybar --add item wifi e \
   --set wifi label.drawing=off icon.padding_right=8 icon.color=$BLUE script="$PLUGIN_DIR/wifi.sh" \
   --subscribe wifi wifi_change system_woke
 
 sketchybar --add event input_change AppleSelectedInputSourcesChangedNotification \
-  --add item keyboard right \
+  --add item keyboard e \
   --set keyboard icon=󰌌 icon.color=$MAUVE script="$PLUGIN_DIR/keyboard.sh" \
   --subscribe keyboard input_change
 
-# stats.sh updates ram/gpu/cpu together, driven by the cpu item
-sketchybar --add item ram right --set ram icon=󰍛 icon.color=$PEACH \
-  --add item gpu right --set gpu icon=󰢮 icon.color=$TEAL \
-  --add item cpu right --set cpu icon=󰻠 icon.color=$GREEN update_freq=3 script="$PLUGIN_DIR/stats.sh"
+# stats.sh updates ram/cpu together, driven by the cpu item
+sketchybar --add item ram e --set ram icon=󰍛 icon.color=$PEACH \
+  --add item cpu e --set cpu icon=󰻠 icon.color=$GREEN update_freq=3 script="$PLUGIN_DIR/stats.sh"
 
 sketchybar --update
