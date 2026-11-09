@@ -3,11 +3,20 @@
 // Extensions to install first (cmd-shift-x): catppuccin, catppuccin-icons, php, vue, emmet
 {
   // workbench.colorTheme / workbench.iconTheme
+  "cli_default_open_behavior": "existing_window",
   "edit_predictions": {
     "provider": "copilot",
   },
-  "theme": "Catppuccin Mocha",
-  "icon_theme": "Catppuccin Mocha",
+  "theme": {
+    "mode": "light",
+    "light": "Catppuccin Latte",
+    "dark": "One Dark",
+  },
+  "icon_theme": {
+    "mode": "light",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha",
+  },
 
   // editor.fontFamily / fontSize / fontWeight / fontLigatures
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
@@ -81,6 +90,20 @@
     // copilot plaintext: true
     "Plain Text": {
       "show_edit_predictions": true,
+    },
+  },
+
+  // Language-server init options live under "lsp", not "languages".
+  "lsp": {
+    "tinymist": {
+      "initialization_options": {
+        "exportPageOnSave": "pdf",
+        "tinymist.preview.browsing.args": [
+          "--data-plane-host=127.0.0.1:0",
+          "--invert-colors=auto",
+          "--open",
+        ],
+      },
     },
   },
 }
